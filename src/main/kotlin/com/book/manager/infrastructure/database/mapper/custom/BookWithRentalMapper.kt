@@ -22,7 +22,7 @@ interface BookWithRentalMapper {
   @Results(
     id = "BookWithRentalRecordResult", value = [
       Result(column = "id", property = "id", jdbcType = JdbcType.BIGINT, id = true),
-      Result(column = "id", property = "title", jdbcType = JdbcType.VARCHAR),
+      Result(column = "title", property = "title", jdbcType = JdbcType.VARCHAR),
       Result(column = "author", property = "author", jdbcType = JdbcType.VARCHAR),
       Result(column = "release_date", property = "releaseDate", jdbcType = JdbcType.DATE),
       Result(column = "user_id", property = "userId", jdbcType = JdbcType.BIGINT),
