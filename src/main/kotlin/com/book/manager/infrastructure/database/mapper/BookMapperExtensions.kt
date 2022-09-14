@@ -6,7 +6,7 @@ package com.book.manager.infrastructure.database.mapper
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.author
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.id
-import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.releaseData
+import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.releaseDate
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.title
 import com.book.manager.infrastructure.database.record.BookRecord
 import org.mybatis.dynamic.sql.SqlBuilder.isEqualTo
@@ -29,7 +29,7 @@ fun BookMapper.insert(record: BookRecord) =
         map(id).toProperty("id")
         map(title).toProperty("title")
         map(author).toProperty("author")
-        map(releaseData).toProperty("releaseData")
+        map(releaseDate).toProperty("releaseDate")
     }
 
 fun BookMapper.insertMultiple(records: Collection<BookRecord>) =
@@ -37,7 +37,7 @@ fun BookMapper.insertMultiple(records: Collection<BookRecord>) =
         map(id).toProperty("id")
         map(title).toProperty("title")
         map(author).toProperty("author")
-        map(releaseData).toProperty("releaseData")
+        map(releaseDate).toProperty("releaseDate")
     }
 
 fun BookMapper.insertMultiple(vararg records: BookRecord) =
@@ -48,10 +48,10 @@ fun BookMapper.insertSelective(record: BookRecord) =
         map(id).toPropertyWhenPresent("id", record::id)
         map(title).toPropertyWhenPresent("title", record::title)
         map(author).toPropertyWhenPresent("author", record::author)
-        map(releaseData).toPropertyWhenPresent("releaseData", record::releaseData)
+        map(releaseDate).toPropertyWhenPresent("releaseDate", record::releaseDate)
     }
 
-private val columnList = listOf(id, title, author, releaseData)
+private val columnList = listOf(id, title, author, releaseDate)
 
 fun BookMapper.selectOne(completer: SelectCompleter) =
     selectOne(this::selectOne, columnList, Book, completer)
@@ -75,7 +75,7 @@ fun KotlinUpdateBuilder.updateAllColumns(record: BookRecord) =
         set(id).equalTo(record::id)
         set(title).equalTo(record::title)
         set(author).equalTo(record::author)
-        set(releaseData).equalTo(record::releaseData)
+        set(releaseDate).equalTo(record::releaseDate)
     }
 
 fun KotlinUpdateBuilder.updateSelectiveColumns(record: BookRecord) =
@@ -83,14 +83,14 @@ fun KotlinUpdateBuilder.updateSelectiveColumns(record: BookRecord) =
         set(id).equalToWhenPresent(record::id)
         set(title).equalToWhenPresent(record::title)
         set(author).equalToWhenPresent(record::author)
-        set(releaseData).equalToWhenPresent(record::releaseData)
+        set(releaseDate).equalToWhenPresent(record::releaseDate)
     }
 
 fun BookMapper.updateByPrimaryKey(record: BookRecord) =
     update {
         set(title).equalTo(record::title)
         set(author).equalTo(record::author)
-        set(releaseData).equalTo(record::releaseData)
+        set(releaseDate).equalTo(record::releaseDate)
         where(id, isEqualTo(record::id))
     }
 
@@ -98,6 +98,6 @@ fun BookMapper.updateByPrimaryKeySelective(record: BookRecord) =
     update {
         set(title).equalToWhenPresent(record::title)
         set(author).equalToWhenPresent(record::author)
-        set(releaseData).equalToWhenPresent(record::releaseData)
+        set(releaseDate).equalToWhenPresent(record::releaseDate)
         where(id, isEqualTo(record::id))
     }

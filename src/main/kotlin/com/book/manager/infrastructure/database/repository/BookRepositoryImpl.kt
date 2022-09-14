@@ -23,7 +23,7 @@ class BookRepositoryImpl(
       record.id!!,
       record.title!!,
       record.author!!,
-      record.releaseData!!
+      record.releaseDate!!
     )
     val rental = record.userId?.let {
       Rental(

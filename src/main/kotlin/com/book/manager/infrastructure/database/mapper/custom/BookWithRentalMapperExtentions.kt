@@ -3,7 +3,7 @@ package com.book.manager.infrastructure.database.mapper.custom
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.author
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.id
-import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.releaseData
+import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.releaseDate
 import com.book.manager.infrastructure.database.mapper.BookDynamicSqlSupport.Book.title
 import com.book.manager.infrastructure.database.mapper.RentalDynamicSqlSupport.Rental
 import com.book.manager.infrastructure.database.mapper.RentalDynamicSqlSupport.Rental.rentalDatetime
@@ -18,13 +18,13 @@ private val columnList = listOf(
   id,
   title,
   author,
-  releaseData,
+  releaseDate,
   userId,
   rentalDatetime,
   returnDeadline
 )
 
-// SELECT b.id, b.title, b.author, b.release_data, r.user_id, r.rental_datetime, r.return_deadline
+// SELECT b.id, b.title, b.author, b.release_date, r.user_id, r.rental_datetime, r.return_deadline
 // FROM book b
 // LEFT JOIN rental r
 // ON b.id = r.book_id

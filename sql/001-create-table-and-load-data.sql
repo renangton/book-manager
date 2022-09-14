@@ -11,7 +11,7 @@ CREATE TABLE book(
     id bigint NOT NULL,
     title varchar(128) NOT NULL,
     author varchar(32) NOT NULL,
-    release_data date NOT NULL,
+    release_date date NOT NULL,
     PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

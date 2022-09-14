@@ -9,5 +9,5 @@ data class BookRecord(
     var id: Long? = null,
     var title: String? = null,
     var author: String? = null,
-    var releaseData: LocalDate? = null
+    var releaseDate: LocalDate? = null
 )

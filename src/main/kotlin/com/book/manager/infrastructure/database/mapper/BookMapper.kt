@@ -43,7 +43,7 @@ interface BookMapper {
         Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
         Result(column="title", property="title", jdbcType=JdbcType.VARCHAR),
         Result(column="author", property="author", jdbcType=JdbcType.VARCHAR),
-        Result(column="release_data", property="releaseData", jdbcType=JdbcType.DATE)
+        Result(column="release_date", property="releaseDate", jdbcType=JdbcType.DATE)
     ])
     fun selectMany(selectStatement: SelectStatementProvider): List<BookRecord>
 

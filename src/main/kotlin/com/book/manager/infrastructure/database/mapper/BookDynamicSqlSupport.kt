@@ -15,6 +15,6 @@ object BookDynamicSqlSupport {
 
         val author = column<String>("author", JDBCType.VARCHAR)
 
-        val releaseData = column<LocalDate>("release_data", JDBCType.DATE)
+        val releaseDate = column<LocalDate>("release_date", JDBCType.DATE)
     }
 }
